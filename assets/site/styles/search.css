@@ -1,0 +1,121 @@
+/* search.css - Unified style for search.htm and search.js, matching site look */
+
+html {
+  backdrop-filter: brightness(10%);
+}
+
+#searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+  padding: 2rem 0 1rem 0;
+}
+
+#searchInput {
+  width: 40%;
+  padding: 0.7rem 1.2rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1.1rem;
+  background: var(--glass);
+  color: var(--color);
+  outline: none;
+  box-shadow: 0 2px 8px var(--glass);
+  transition: box-shadow 0.2s;
+}
+#searchInput:focus {
+  box-shadow: 0 4px 16px var(--glass);
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  aspect-ratio: 2/3;
+  height: 20rem;
+  padding: 1%;
+  margin: 2%;
+  gap: 3%;
+  border-radius: 2vmin;
+  transition: all 0.2s linear;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--glass);
+  backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+  outline: solid 3px var(--glass);
+  box-shadow: 0 2px 12px #0003;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.game:hover {
+  transform: translateY(-5px) scale(1.03);
+  filter: brightness(110%) contrast(90%);
+  box-shadow: 0 8px 32px #0005;
+}
+
+.game .category {
+  background-color: #5865f2;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 1rem;
+  margin-bottom: 0.7rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+
+.game .name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.2rem 0 0.7rem 0;
+  color: #fff;
+  text-shadow: 0 2px 8px #0007;
+  text-transform: capitalize;
+}
+
+.game .details {
+  font-size: 1rem;
+  color: #d1d1d1;
+  margin-bottom: 1.2rem;
+  flex: 1 1 auto;
+  text-shadow: 0 1px 4px #0005;
+}
+
+.game .type {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.2rem;
+  background: #111c;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  #results {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  #searchInput {
+    width: 95vw;
+    font-size: 1rem;
+  }
+}
